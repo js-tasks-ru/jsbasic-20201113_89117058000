@@ -4,5 +4,30 @@
  * @returns {{min:number, max:number}}  объект
  */
 function getMinMax(str) {
-  // ваш код...
+  let arr = str.split(' ').join(',').split(',');
+  let newArr = []
+  arr.forEach((elem) => {
+      newArr.push(parseFloat(elem))
+  })
+
+  let max = 0;
+  newArr.forEach((elem) => {
+    if(elem > max) {
+      max = elem
+    }
+  })
+
+  let min = 0;
+  newArr.forEach((elem) => {
+    if(elem < min) {
+      min = elem
+    }
+  })
+
+  let result = {
+    min,
+    max,
+  }
+
+  return result
 }
